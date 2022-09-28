@@ -24,6 +24,8 @@ steps:
      ansible-lint --version
    displayName: 'Installing Ansible lint'
 
- - script: |
-     ansible-lint
-   displayName: 'Run ansible-lint'
+ - task: Bash@3
+   inputs:
+     targetType: 'inline'
+     script: 'ansible-lint'
+     workingDirectory: '$(Build.SourcesDirectory)/playbooks'
