@@ -64,7 +64,3 @@
         - "v.stat.pw_name == 'root'"
       fail_msg: "vars.html may not exists or have incorrect ownership"
       success_msg: "vars.html exists with proper ownership"
-
-#This script will run the website-test.yml playbook.
-  - script: ANSIBLE_HOST_KEY_CHECKING=False export ANSIBLE_ROLES_PATH=./roles && ansible-playbook -u ubuntu -i ./host_inventory ./playbooks/website-test.yml --private-key /home/ubuntu/.ssh/vm-instance-key.pem
-    displayName: 'Running Website-Test'
